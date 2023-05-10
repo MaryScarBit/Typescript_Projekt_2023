@@ -23,6 +23,10 @@ function update() {
     })
 }
 
+/*
+Wird ausgeführt, wenn man ein Item über den Boxen fallenlässt. Ich erstelle ein frisches Element und schmeiße es in die
+entsprechende Box
+ */
 function handleItemDrop(this: HTMLDivElement, ev: DragEvent) {
     if (ev.dataTransfer !== null) {
         const itemtitle : string = ev.dataTransfer.getData("text/plain")
