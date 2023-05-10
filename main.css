@@ -1,0 +1,42 @@
+body {
+    display: flex;
+    justify-content: space-between;
+}
+.box {
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    height: 300px;
+    background-color: #d8f7f8;
+    margin: 20px;
+    padding: 10px;
+    overflow: scroll;
+  }
+  
+  .item {
+    background-color: rgb(206, 198, 238);
+    border: 1px solid #746ca2;
+    border-radius: 4px;
+    margin: 5px;
+    padding: 10px;
+    text-align: center;
+    user-select: none;
+  }
+  
+  div {
+    margin: 20px;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  input {
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 100%;
+    box-sizing: border-box;
+  }
