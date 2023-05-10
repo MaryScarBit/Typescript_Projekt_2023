@@ -9,7 +9,6 @@ document.addEventListener("DOMContentLoaded", () : void=>{
     })
     update();
 })
-
 /*
 Die EventListener für Drag und Drop verschwinden für die Objekte, die ich neu hinzugefügt habe. Demnach muss ich mit einer Funktion
 diese wieder laufend hinzufügen. Sonst wird Drag nicht aufgerufen.
@@ -22,7 +21,6 @@ function update() {
         i.addEventListener("dragstart", handleItemDrag)
     })
 }
-
 /*
 Wird ausgeführt, wenn man ein Item über den Boxen fallenlässt. Ich erstelle ein frisches Element und schmeiße es in die
 entsprechende Box
@@ -43,7 +41,6 @@ function handleItemDrop(this: HTMLDivElement, ev: DragEvent) {
         update();
     }
 }
-
 /*
 Ich kopiere hier den Inhalt des items in den datatransfer und übertrage den so ins Drop Event
  */
@@ -55,3 +52,4 @@ function handleItemDrag(this: HTMLDivElement, ev: DragEvent) {
         this.classList.add("dragged")
     }
 }
+
