@@ -44,7 +44,9 @@ function handleItemDrop(this: HTMLDivElement, ev: DragEvent) {
     }
 }
 
-
+/*
+Ich kopiere hier den Inhalt des items in den datatransfer und übertrage den so ins Drop Event
+ */
 function handleItemDrag(this: HTMLDivElement, ev: DragEvent) {
     if (ev.dataTransfer !== null) {
         ev.dataTransfer.setData("text/plain", this.innerHTML)
