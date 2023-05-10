@@ -1,21 +1,38 @@
 body {
+  background-image: url("");
+    background-repeat: no-repeat;
+    background-size: cover;
     display: flex;
-    justify-content: space-between;
+    justify-content: center; 
+    align-items: center;
+    height: 100vh;
 }
+   
+
+
+header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 10px;
+  text-align: left;
+}
+
 .box {
     display: flex;
     flex-direction: column;
     width: 200px;
     height: 300px;
-    background-color: #d8f7f8;
+    background-color: #d6d6d6;
     margin: 20px;
     padding: 10px;
     overflow: scroll;
+    border-radius: 10px
   }
   
   .item {
-    background-color: rgb(206, 198, 238);
-    border: 1px solid #746ca2;
+    background-color: rgb(234, 234, 234);
+    border: 1px solid #c2c2c2;
     border-radius: 4px;
     margin: 5px;
     padding: 10px;
@@ -31,12 +48,16 @@ body {
     display: block;
     margin-bottom: 5px;
   }
-  
+
   input {
+    position: absolute;
+    bottom: 0;
+    left: 20px; /* Abstand linken Seite */
+    right: 20px; /* Abstand rechten Seite */
     padding: 10px;
     font-size: 16px;
     border-radius: 5px;
-    border: 1px solid #ccc;
-    width: 100%;
+    border: 1px solid #000000;
+    width: calc(100% - 40px);
     box-sizing: border-box;
   }
