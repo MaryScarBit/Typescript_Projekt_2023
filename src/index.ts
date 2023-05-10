@@ -35,3 +35,13 @@ function handleItemDrop(this: HTMLDivElement, ev: DragEvent) {
         update();
     }
 }
+
+
+function handleItemDrag(this: HTMLDivElement, ev: DragEvent) {
+    if (ev.dataTransfer !== null) {
+        ev.dataTransfer.setData("text/plain", this.innerHTML)
+        console.log("Drag: " + this.innerHTML)
+        ev.dataTransfer.dropEffect = "move"
+        this.classList.add("dragged")
+    }
+}
