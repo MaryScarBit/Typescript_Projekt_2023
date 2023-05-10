@@ -10,6 +10,10 @@ document.addEventListener("DOMContentLoaded", () : void=>{
     update();
 })
 
+/*
+Die EventListener für Drag und Drop verschwinden für die Objekte, die ich neu hinzugefügt habe. Demnach muss ich mit einer Funktion
+diese wieder laufend hinzufügen. Sonst wird Drag nicht aufgerufen.
+ */
 function update() {
     let items: NodeListOf<HTMLDivElement> = document.querySelectorAll(".item")
     console.log("Items: "+items.length)
