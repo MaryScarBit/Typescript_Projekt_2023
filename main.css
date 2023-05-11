@@ -8,6 +8,13 @@ body {
     height: 100vh;
 }
    
+.container {
+  width: 100%;
+  display:flex;
+  height: calc(90% - 20px);
+  justify-content: center; 
+  margin-top: calc(10vh + 20px);
+}
 
 header {
   position: absolute;
@@ -20,8 +27,8 @@ header {
 .box {
     display: flex;
     flex-direction: column;
-    width: 200px;
-    height: 300px;
+    width: 20vw;
+    height: 500px;
     background-color: #d6d6d6;
     margin: 20px;
     padding: 10px;
@@ -60,3 +67,34 @@ header {
     width: calc(100% - 40px);
     box-sizing: border-box;
   }
+
+  .btn-add:hover {
+    background-color: #888888;
+}
+
+[contentEditable=true]:empty:not(:focus):before {
+  content: attr(data-text)
+}
+
+.überschrift1 {
+  color: black;
+  text-align: center;
+  text-shadow: #333333;
+  border-radius: 10px;
+}
+
+.btn-add {
+  color: black;
+  background-color: white;
+  border-radius: 10px;
+  padding: 10px;
+  width: 100%;
+  margin-top: 8px;
+  font-size: large;
+  font-weight: bold;
+  text-align: center;
+}
+
+.btn-add:hover {
+  background-color: #888888;
+}

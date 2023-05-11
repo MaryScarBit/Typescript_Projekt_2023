@@ -11,6 +11,12 @@
             });
         });
         update();
+        const buttons = document.querySelectorAll(".btn-add");
+        if (buttons !== null) {
+            buttons.forEach((y) => {
+                y.addEventListener('click', addElement);
+            });
+        }
     });
     /*
     Die EventListener für Drag und Drop verschwinden für die Objekte, die ich neu hinzugefügt habe. Demnach muss ich mit einer Funktion
@@ -18,7 +24,6 @@
      */
     function update() {
         let items = document.querySelectorAll(".item");
-        console.log("Items: " + items.length);
         items.forEach((i) => {
             i.addEventListener("drag", (ev) => { ev.preventDefault(); });
             i.addEventListener("dragstart", handleItemDrag);
@@ -31,8 +36,8 @@
     function handleItemDrop(ev) {
         if (ev.dataTransfer !== null) {
             const itemtitle = ev.dataTransfer.getData("text/plain");
-            console.log("Drop: " + itemtitle);
             let elem = document.createElement("div");
+            elem.setAttribute("contentEditable", "true");
             elem.innerHTML = itemtitle;
             elem.classList.add("item");
             elem.setAttribute("draggable", "true");
@@ -50,44 +55,22 @@
     function handleItemDrag(ev) {
         if (ev.dataTransfer !== null) {
             ev.dataTransfer.setData("text/plain", this.innerHTML);
-            console.log("Drag: " + this.innerHTML);
             ev.dataTransfer.dropEffect = "move";
             this.classList.add("dragged");
         }
     }
-    //Button
-    document.addEventListener("DOMContentLoaded", () => {
-        const addButton = document.getElementById("add-button");
-        if (addButton) {
-            addButton.addEventListener("click", handleAddButtonClick);
+    function addElement() {
+        let elem = document.createElement("div");
+        elem.setAttribute("contentEditable", "true");
+        elem.classList.add("item");
+        elem.setAttribute("draggable", "true");
+        let container = this.parentNode;
+        if (container !== null) {
+            container = container.parentNode;
+            container.appendChild(elem);
         }
-        function handleAddButtonClick() {
-            const input = document.getElementById("text-input");
-            const newItemText = input.value.trim();
-            if (newItemText !== "") {
-                const box = document.querySelector(".box");
-                const newItem = document.createElement("div");
-                newItem.classList.add("item");
-                newItem.draggable = true;
-                newItem.contentEditable = "true";
-                newItem.textContent = newItemText;
-                newItem.addEventListener("drag", (ev) => {
-                    ev.preventDefault();
-                });
-                newItem.addEventListener("dragstart", handleItemDrag);
-                box.appendChild(newItem);
-                input.value = "";
-            }
-        }
-        function handleItemDrag(ev) {
-            if (ev.dataTransfer) {
-                const draggedItem = ev.target;
-                ev.dataTransfer.setData("text/plain", draggedItem.innerHTML);
-                console.log("Drag: " + draggedItem.innerHTML);
-                ev.dataTransfer.dropEffect = "move";
-                draggedItem.classList.add("dragged");
-            }
-        }
-    });
+        update();
+    }
+    //btn-add> ändern, container
 
 })();
