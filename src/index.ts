@@ -53,3 +53,43 @@ function handleItemDrag(this: HTMLDivElement, ev: DragEvent) {
     }
 }
 
+//Button
+document.addEventListener("DOMContentLoaded", () => {
+    const addButton = document.getElementById("add-button");
+    if (addButton) {
+      addButton.addEventListener("click", handleAddButtonClick);
+    }
+  
+    function handleAddButtonClick() {
+      const input = document.getElementById("text-input") as HTMLInputElement;
+      const newItemText = input.value.trim();
+  
+      if (newItemText !== "") {
+        const box = document.querySelector(".box") as HTMLDivElement;
+        const newItem = document.createElement("div");
+        newItem.classList.add("item");
+        newItem.draggable = true;
+        newItem.contentEditable = "true";
+        newItem.textContent = newItemText;
+  
+        newItem.addEventListener("drag", (ev: DragEvent) => {
+          ev.preventDefault();
+        });
+        newItem.addEventListener("dragstart", handleItemDrag);
+  
+        box.appendChild(newItem);
+        input.value = "";
+      }
+    }
+  
+    function handleItemDrag(ev: DragEvent) {
+      if (ev.dataTransfer) {
+        const draggedItem = ev.target as HTMLDivElement;
+        ev.dataTransfer.setData("text/plain", draggedItem.innerHTML);
+        console.log("Drag: " + draggedItem.innerHTML);
+        ev.dataTransfer.dropEffect = "move";
+        draggedItem.classList.add("dragged");
+      }
+    }
+  });
+  
