@@ -1,18 +1,18 @@
 body {
-  background-image: url("Hintergrundbild austauschen.jpeg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    display: flex;
-    justify-content: center; 
-    align-items: center;
-    height: 100vh;
+  background-image: url("Hintergrundbild.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
-   
+
 .container {
   width: 100%;
-  display:flex;
+  display: flex;
   height: calc(90% - 20px);
-  justify-content: center; 
+  justify-content: center;
   margin-top: calc(10vh + 20px);
 }
 
@@ -24,52 +24,59 @@ header {
   text-align: left;
 }
 
+h1 {
+  color: rgb(39, 24, 57);
+
+}
+
 .box {
-    display: flex;
-    flex-direction: column;
-    width: 20vw;
-    height: 500px;
-    background-color: #d6d6d6;
-    margin: 20px;
-    padding: 10px;
-    overflow: scroll;
-    border-radius: 10px
-  }
-  
-  .item {
-    background-color: rgb(234, 234, 234);
-    border: 1px solid #c2c2c2;
-    border-radius: 4px;
-    margin: 5px;
-    padding: 10px;
-    text-align: center;
-    user-select: none;
-  }
-  
-  div {
-    margin: 20px;
-  }
-  
-  label {
-    display: block;
-    margin-bottom: 5px;
-  }
+  display: flex;
+  flex-direction: column;
+  width: 20vw;
+  height: 500px;
+  background-color: #d6d6d6;
+  margin: 20px;
+  padding: 10px;
+  overflow: scroll;
+  border-radius: 10px
+}
 
-  input {
-    position: absolute;
-    bottom: 0;
-    left: 20px; /* Abstand linken Seite */
-    right: 20px; /* Abstand rechten Seite */
-    padding: 10px;
-    font-size: 16px;
-    border-radius: 5px;
-    border: 1px solid #000000;
-    width: calc(100% - 40px);
-    box-sizing: border-box;
-  }
+.item {
+  background-color: rgb(244, 244, 244);
+  border: 1px solid #c2c2c2;
+  border-radius: 4px;
+  margin: 5px;
+  padding: 10px;
+  text-align: center;
+  user-select: none;
+}
 
-  .btn-add:hover {
-    background-color: #888888;
+div {
+  margin: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+input {
+  position: absolute;
+  bottom: 0;
+  left: 20px;
+  /* Abstand linken Seite */
+  right: 20px;
+  /* Abstand rechten Seite */
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #000000;
+  width: calc(100% - 40px);
+  box-sizing: border-box;
+}
+
+.btn-add:hover {
+  background-color: #888888;
 }
 
 [contentEditable=true]:empty:not(:focus):before {
@@ -77,7 +84,7 @@ header {
 }
 
 .überschrift1 {
-  color: black;
+  color: rgb(32, 25, 63);
   text-align: center;
   text-shadow: #333333;
   border-radius: 10px;

@@ -1,5 +1,3 @@
-
-
 document.addEventListener("DOMContentLoaded", () : void=>{
     const boxes : NodeListOf<HTMLDivElement> = document.querySelectorAll(".box")
     let items : NodeListOf<HTMLDivElement> = document.querySelectorAll(".item")
